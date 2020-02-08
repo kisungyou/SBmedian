@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581191818830.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2810397293",
+    "id" : "BCC0F0FA",
+    "lastKnownWriteTime" : 1581193756,
+    "last_content_update" : 1581193756528,
+    "path" : "~/Desktop/SBmedian/R/package-SBmedian.R",
+    "project_path" : "R/package-SBmedian.R",
+    "properties" : {
+        "cursorPosition" : "3,115",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
