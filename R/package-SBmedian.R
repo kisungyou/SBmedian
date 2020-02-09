@@ -8,7 +8,7 @@
 #' @aliases SBmedian-package
 #' @import Rdpack
 #' @importFrom expm expm logm
-#' @importFrom stats rnorm
+#' @importFrom stats rnorm rWishart density
 #' @importFrom utils packageVersion
 #' @importFrom Rcpp evalCpp
 #' @useDynLib SBmedian

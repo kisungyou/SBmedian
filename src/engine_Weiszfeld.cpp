@@ -100,7 +100,7 @@ arma::colvec compute_wweights (double sigma, arma::field<arma::mat> subsetAtomsL
 
 // Main Computation
 // [[Rcpp::export]]
-Rcpp::List engine_main(Rcpp::List subsetAtomsList, double sigma, unsigned int maxit, double tol, bool showprog = false) {
+Rcpp::List engine_main(Rcpp::List subsetAtomsList, double sigma, unsigned int maxit, double tol, bool showprog = false, std::string myfname="mpost.euc") {
   unsigned int nsubset = subsetAtomsList.size(); // # subset posteriors
   unsigned int ii, jj, kk, ndim, idx;
   
@@ -151,7 +151,7 @@ Rcpp::List engine_main(Rcpp::List subsetAtomsList, double sigma, unsigned int ma
   
   for (jj = 0; jj < maxit; ++jj) {
     if (((jj + 1) % 5 == 0)&&(showprog)){
-      Rcpp::Rcout << " * mposterior : iteration " << jj + 1 << "/" << maxit << " complete.." << std::endl;  
+      Rcpp::Rcout << " * " << myfname << " : iteration " << jj + 1 << "/" << maxit << " complete.." << std::endl;  
     } 
     
     norms = compute_wweights(sigma, subsetPosteriorSamplesList, medianEmpiricalMeasureAtoms, empiricalMeasureProbList, medianEmpiricalMeasureProbs);
@@ -169,7 +169,7 @@ Rcpp::List engine_main(Rcpp::List subsetAtomsList, double sigma, unsigned int ma
     
     if (((sum(abs(norms - normsOld)) / nsubset) < tol) & (jj > 10)) {
       if (showprog){
-        Rcpp::Rcout << " * mposterior : iteration " << jj + 1 << "/" << maxit << " reached convergence." << std::endl;
+        Rcpp::Rcout << " * " << myfname << " : iteration " << jj + 1 << "/" << maxit << " reached convergence." << std::endl;
       }
       break;
     }

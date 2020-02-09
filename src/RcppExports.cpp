@@ -7,8 +7,8 @@
 using namespace Rcpp;
 
 // engine_main
-Rcpp::List engine_main(Rcpp::List subsetAtomsList, double sigma, unsigned int maxit, double tol, bool showprog);
-RcppExport SEXP _SBmedian_engine_main(SEXP subsetAtomsListSEXP, SEXP sigmaSEXP, SEXP maxitSEXP, SEXP tolSEXP, SEXP showprogSEXP) {
+Rcpp::List engine_main(Rcpp::List subsetAtomsList, double sigma, unsigned int maxit, double tol, bool showprog, std::string myfname);
+RcppExport SEXP _SBmedian_engine_main(SEXP subsetAtomsListSEXP, SEXP sigmaSEXP, SEXP maxitSEXP, SEXP tolSEXP, SEXP showprogSEXP, SEXP myfnameSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -17,13 +17,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< unsigned int >::type maxit(maxitSEXP);
     Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
     Rcpp::traits::input_parameter< bool >::type showprog(showprogSEXP);
-    rcpp_result_gen = Rcpp::wrap(engine_main(subsetAtomsList, sigma, maxit, tol, showprog));
+    Rcpp::traits::input_parameter< std::string >::type myfname(myfnameSEXP);
+    rcpp_result_gen = Rcpp::wrap(engine_main(subsetAtomsList, sigma, maxit, tol, showprog, myfname));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_SBmedian_engine_main", (DL_FUNC) &_SBmedian_engine_main, 5},
+    {"_SBmedian_engine_main", (DL_FUNC) &_SBmedian_engine_main, 6},
     {NULL, NULL, 0}
 };
 

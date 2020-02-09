@@ -1,6 +1,6 @@
 #' Median Posterior for Subset Posterior Samples in Euclidean Space
 #' 
-#' \code{mposterior} is a general framework to \emph{merge} multiple 
+#' \code{mpost.euc} is a general framework to \emph{merge} multiple 
 #' empirical measures \eqn{Q_1,Q_2,\ldots,Q_M \subset R^p} from independent subset of data by finding a median 
 #' \deqn{\hat{Q} = \textrm{argmin}_Q \sum_{m=1}^M d(Q,Q_m)}
 #' where \eqn{Q} is a weighted combination and \eqn{d(P_1,P_2)} is distance in RKHS between two empirical measures \eqn{P_1} and \eqn{P_2}. 
@@ -31,7 +31,7 @@
 #' mydata[[4]] = cbind(rnorm(77, mean= 2), rnorm(77, mean=-1))
 #' 
 #' #  Step 2. Let's run the algorithm
-#' myrun = mposterior(mydata, show.progress=TRUE)
+#' myrun = mpost.euc(mydata, show.progress=TRUE)
 #' 
 #' #  Step 3. Visualize
 #' #  3-1. show subset posterior samples
@@ -57,12 +57,12 @@
 #' \insertRef{minsker_robust_2017}{SBmedian}
 #' 
 #' @export
-mposterior <- function(splist, sigma = 0.1, maxiter = 121, abstol = 1e-6, show.progress = FALSE){
+mpost.euc <- function(splist, sigma = 0.1, maxiter = 121, abstol = 1e-6, show.progress = FALSE){
   ##-----------------------------------------------------------------------------------------------
   ## Check the input
   
   if ((!is.list(splist))||(length(splist)<2)){
-    stop(" * mposterior : 'splist' should be a LIST of length larger than 1.")
+    stop(" * mpost.euc : 'splist' should be a LIST of length larger than 1.")
   }
   if (inherits(splist[[1]], "vector")){
     check_vector(splist)
@@ -74,7 +74,7 @@ mposterior <- function(splist, sigma = 0.1, maxiter = 121, abstol = 1e-6, show.p
     check_matrix(splist)
     vflag = FALSE
   } else {
-    stop(" * mposterior : elements in 'splist' should ALL be either VECTORS or MATRICES.")
+    stop(" * mpost.euc : elements in 'splist' should ALL be either VECTORS or MATRICES.")
   }
   
   ##-----------------------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ mposterior <- function(splist, sigma = 0.1, maxiter = 121, abstol = 1e-6, show.p
   mysigma    = as.double(sigma)
   mymaxiter  = round(maxiter)
   myabstol   = as.double(abstol)
-  medMeasure = engine_main(splist, mysigma, mymaxiter, myabstol, show.progress)
+  medMeasure = engine_main(splist, mysigma, mymaxiter, myabstol, show.progress, "mpost.euc")
   
   ##-----------------------------------------------------------------------------------------------
   ## Manipulating the returned output
