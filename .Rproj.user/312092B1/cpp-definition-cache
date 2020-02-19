@@ -5,7 +5,7 @@
                 "column" : 8,
                 "file" : "/home/kisung/Desktop/SBmedian/src/engine_Weiszfeld.cpp",
                 "kind" : 6,
-                "line" : 10,
+                "line" : 11,
                 "name" : "triple_max(double, double, double)",
                 "parent_name" : "",
                 "usr" : "c:@F@triple_max#d#d#d#"
@@ -14,7 +14,7 @@
                 "column" : 8,
                 "file" : "/home/kisung/Desktop/SBmedian/src/engine_Weiszfeld.cpp",
                 "kind" : 6,
-                "line" : 16,
+                "line" : 18,
                 "name" : "triple_min(double, double, double)",
                 "parent_name" : "",
                 "usr" : "c:@F@triple_min#d#d#d#"
@@ -23,31 +23,31 @@
                 "column" : 11,
                 "file" : "/home/kisung/Desktop/SBmedian/src/engine_Weiszfeld.cpp",
                 "kind" : 6,
-                "line" : 40,
-                "name" : "logRbfKernelMatrix(double, arma::mat, arma::mat)",
+                "line" : 26,
+                "name" : "compute_kernel(double, arma::mat, arma::mat)",
                 "parent_name" : "",
-                "usr" : "c:@F@logRbfKernelMatrix#d#$@N@arma@C@Mat>#d#S0_#"
+                "usr" : "c:@F@compute_kernel#d#$@N@arma@C@Mat>#d#S0_#"
             },
             {
                 "column" : 14,
                 "file" : "/home/kisung/Desktop/SBmedian/src/engine_Weiszfeld.cpp",
                 "kind" : 6,
-                "line" : 88,
-                "name" : "updateWeiszfeldWts(double, arma::field<arma::mat>, arma::mat, arma::field<arma::mat>, arma::mat)",
+                "line" : 54,
+                "name" : "compute_wweights(double, arma::field<arma::mat>, arma::mat, arma::field<arma::mat>, arma::mat)",
                 "parent_name" : "",
-                "usr" : "c:@F@updateWeiszfeldWts#d#$@N@arma@C@field>#$@N@arma@C@Mat>#d#S1_#S0_#S1_#"
+                "usr" : "c:@F@compute_wweights#d#$@N@arma@C@field>#$@N@arma@C@Mat>#d#S1_#S0_#S1_#"
             },
             {
                 "column" : 12,
                 "file" : "/home/kisung/Desktop/SBmedian/src/engine_Weiszfeld.cpp",
                 "kind" : 6,
-                "line" : 155,
-                "name" : "findWeiszfeldMedian(Rcpp::List, double, unsigned int, double, bool)",
+                "line" : 103,
+                "name" : "engine_main(Rcpp::List, double, unsigned int, double, bool, std::string)",
                 "parent_name" : "",
-                "usr" : "c:@F@findWeiszfeldMedian#$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#d#i#d#b#"
+                "usr" : "c:@F@engine_main#$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#d#i#d#b#$@N@std@N@__1@C@basic_string>#C#$@N@std@N@__1@S@char_traits>#C#$@N@std@N@__1@C@allocator>#C#"
             }
         ],
         "file" : "/home/kisung/Desktop/SBmedian/src/engine_Weiszfeld.cpp",
-        "file_last_write" : 1580328760
+        "file_last_write" : 1582130957
     }
 ]
