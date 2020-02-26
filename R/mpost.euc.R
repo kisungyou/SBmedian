@@ -65,13 +65,13 @@ mpost.euc <- function(splist, sigma = 0.1, maxiter = 121, abstol = 1e-6, show.pr
     stop(" * mpost.euc : 'splist' should be a LIST of length larger than 1.")
   }
   if (inherits(splist[[1]], "vector")){
-    check_vector(splist)
+    check_vector(splist, fname="mpost.euc")
     for (i in 1:length(splist)){
       splist[[i]] = matrix(splist[[i]], ncol = 1) # transform to matrices
     }
     vflag = TRUE
   } else if (inherits(splist[[1]], "matrix")){
-    check_matrix(splist)
+    check_matrix(splist, fname="mpost.euc")
     vflag = FALSE
   } else {
     stop(" * mpost.euc : elements in 'splist' should ALL be either VECTORS or MATRICES.")
