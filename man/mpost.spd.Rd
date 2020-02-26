@@ -33,7 +33,10 @@ a named list containing:
 }
 }
 \description{
-Note that \eqn{N_M = \sum_{m=1}^M n_m}.
+SPD manifold is a collection of matrices that are symmetric and positive-definite and 
+it is well known that using Euclidean geometry for data on the manifold is rather inaccurate. 
+Here, we propose a function for dealing with SPD matrices specifically where valid examples include 
+full-rank covariance and precision matrices. Note that \eqn{N_M = \sum_{m=1}^M n_m}.
 }
 \examples{
 ## Median Posteior from 5-dimension Wishart distribution
@@ -67,7 +70,7 @@ eiglim = c(min(eigA), max(eigA))
 
 #  Step 4. Visualize
 #  4-1. show distribution of subset posterior samples' eigenvalues
-opar <- par(mfrow=c(2,3))
+opar <- par(mfrow=c(2,3), no.readonly=TRUE)
 for (i in 1:4){
   hist(eig4[[i]], main=paste("subset", i), xlab="largest eigenvalues", 
        prob=TRUE, xlim=eiglim, ylim=c(0,0.1))
@@ -86,5 +89,6 @@ lines(stats::density(eigA),  lwd=1, col="blue")
 #  4-3. convergence over iterations
 matplot(myrun$weiszfeld.history, xlab="iteration", ylab="value",
         type="b", main="convergence of weights")
+par(opar)
 
 }

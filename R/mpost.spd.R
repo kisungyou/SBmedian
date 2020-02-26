@@ -1,6 +1,9 @@
 #' Median Posterior for Subset Posterior Samples in SPD manifold
 #' 
-#' Note that \eqn{N_M = \sum_{m=1}^M n_m}.
+#' SPD manifold is a collection of matrices that are symmetric and positive-definite and 
+#' it is well known that using Euclidean geometry for data on the manifold is rather inaccurate. 
+#' Here, we propose a function for dealing with SPD matrices specifically where valid examples include 
+#' full-rank covariance and precision matrices. Note that \eqn{N_M = \sum_{m=1}^M n_m}.
 #' 
 #' @param splist a list of length \eqn{M} containing \eqn{(p\times p)} matrix or 3d array of size \eqn{(p\times p\times n_m)} whose slices are SPD matrices from subset posterior samples respectively. 
 #' @param sigma bandwidth parameter for RBF kernel.
@@ -48,7 +51,7 @@
 #' 
 #' #  Step 4. Visualize
 #' #  4-1. show distribution of subset posterior samples' eigenvalues
-#' opar <- par(mfrow=c(2,3))
+#' opar <- par(mfrow=c(2,3), no.readonly=TRUE)
 #' for (i in 1:4){
 #'   hist(eig4[[i]], main=paste("subset", i), xlab="largest eigenvalues", 
 #'        prob=TRUE, xlim=eiglim, ylim=c(0,0.1))
@@ -67,6 +70,7 @@
 #' #  4-3. convergence over iterations
 #' matplot(myrun$weiszfeld.history, xlab="iteration", ylab="value",
 #'         type="b", main="convergence of weights")
+#' par(opar)
 #' 
 #' @export
 mpost.spd <- function(splist, sigma = 0.1, maxiter = 121, abstol = 1e-6, show.progress = FALSE){

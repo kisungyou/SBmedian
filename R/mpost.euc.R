@@ -35,7 +35,7 @@
 #' 
 #' #  Step 3. Visualize
 #' #  3-1. show subset posterior samples
-#' opar <- par(mfrow=c(2,3))
+#' opar <- par(mfrow=c(2,3), no.readonly=TRUE)
 #' for (i in 1:4){
 #'   plot(mydata[[i]], cex=0.5, col=(i+1), pch=19, xlab="", ylab="", 
 #'        main=paste("subset",i), xlim=c(-4,4), ylim=c(-3,3))
@@ -50,6 +50,7 @@
 #' #  3-3. convergence over iterations
 #' matplot(myrun$weiszfeld.history, xlab="iteration", ylab="value",
 #'         type="b", main="convergence of weights")
+#' par(opar)
 #'         
 #' @references 
 #' \insertRef{minsker_scalable_2014}{SBmedian}
