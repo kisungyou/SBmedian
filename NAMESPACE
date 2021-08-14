@@ -2,7 +2,6 @@
 
 export(mpost.euc)
 export(mpost.spd)
-export(mwass.euc)
 import(Rdpack)
 importFrom(Rcpp,evalCpp)
 importFrom(expm,expm)

@@ -1,6 +1,7 @@
 #' Wasserstein Median of 
 #' 
-#' @export
+#' @keywords internal
+#' @noRd
 mwass.euc <- function(splist, maxiter = 121, abstol = 1e-6, show.progress = FALSE){
   ##-----------------------------------------------------------------------------------------------
   ## Check the input

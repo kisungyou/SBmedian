@@ -70,7 +70,8 @@ eiglim = c(min(eigA), max(eigA))
 
 #  Step 4. Visualize
 #  4-1. show distribution of subset posterior samples' eigenvalues
-opar <- par(mfrow=c(2,3), no.readonly=TRUE)
+opar <- par(no.readonly=TRUE)
+par(mfrow=c(2,3))
 for (i in 1:4){
   hist(eig4[[i]], main=paste("subset", i), xlab="largest eigenvalues", 
        prob=TRUE, xlim=eiglim, ylim=c(0,0.1))

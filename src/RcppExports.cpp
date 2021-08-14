@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // engine_main
 Rcpp::List engine_main(Rcpp::List subsetAtomsList, double sigma, unsigned int maxit, double tol, bool showprog, std::string myfname);
 RcppExport SEXP _SBmedian_engine_main(SEXP subsetAtomsListSEXP, SEXP sigmaSEXP, SEXP maxitSEXP, SEXP tolSEXP, SEXP showprogSEXP, SEXP myfnameSEXP) {
