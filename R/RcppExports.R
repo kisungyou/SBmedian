@@ -2,6 +2,6 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 engine_main <- function(subsetAtomsList, sigma, maxit, tol, showprog = FALSE, myfname = "mpost.euc") {
-    .Call('_SBmedian_engine_main', PACKAGE = 'SBmedian', subsetAtomsList, sigma, maxit, tol, showprog, myfname)
+    .Call(`_SBmedian_engine_main`, subsetAtomsList, sigma, maxit, tol, showprog, myfname)
 }
 

@@ -1,4 +1,4 @@
-#' Wasserstein Median of 
+#' Wasserstein Median
 #' 
 #' @keywords internal
 #' @noRd
